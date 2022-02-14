@@ -1,13 +1,10 @@
 package app.usecases
 
 import app.AppInitializer
-import com.typesafe.config.ConfigFactory
-import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.ScalaFutures.convertScalaFuture
 import org.scalatest.matchers.should.Matchers._
-import org.scalatest.wordspec.AnyWordSpecLike
 
-class PagingSalesListTest extends AnyWordSpecLike with BeforeAndAfterAll {
+class PagingSalesListTest extends BaseTest {
   var pagingSalesList: PagingSalesList = _
 
   override def beforeAll(): Unit = {

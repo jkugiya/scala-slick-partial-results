@@ -42,7 +42,7 @@ class PagingSalesListLikeFacebook(salesQueryService: SalesQueryService)(implicit
       val tryBefore = sales.drop(limit).nonEmpty
       (
         tryBefore,
-        if (tryBefore) sales.reverse.tail else sales,
+        if (tryBefore) sales.reverse.tail else sales.reverse,
         tryAfter
       )
     }

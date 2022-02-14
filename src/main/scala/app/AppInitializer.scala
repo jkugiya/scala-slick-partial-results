@@ -1,6 +1,6 @@
 package app
 
-import app.usecases.PagingSalesList
+import app.usecases.{PagingSalesList, PagingSalesListLikeFacebook}
 import ia.slick.{Profile, SalesQueryServiceImpl}
 import models.{Sale, SalesQueryService}
 import slick.basic.DatabaseConfig
@@ -89,5 +89,9 @@ object AppInitializer {
   )
 
   lazy val pagingSalesList: PagingSalesList = new PagingSalesList(salesQueryService)
+
+  lazy val pagingSalesListLikeFacebook: PagingSalesListLikeFacebook = new PagingSalesListLikeFacebook(salesQueryService)
+
+  def close(): Unit = db.close()
 
 }
