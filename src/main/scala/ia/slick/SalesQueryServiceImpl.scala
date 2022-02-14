@@ -19,7 +19,7 @@ class SalesQueryServiceImpl(db: Database) extends SalesQueryService {
   }
 
   private def filterSales(from: LocalDateTime, desc: Boolean) = {
-    sales.filter(s => if (desc) s.date > from else s.date <= from)
+    sales.filter(s => if (desc) s.date < from else s.date > from)
   }
 
 
